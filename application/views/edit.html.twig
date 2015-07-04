@@ -1,0 +1,31 @@
+{# empty Twig template #}
+{% extends 'base_template.html.twig' %}
+{% block title %}Персональный тренер Евгений Надеждин - Редактирование новости{% endblock  %}
+{%block top_menu %}
+			
+                                <div class="top-menu">
+				 	<span class="menu"> </span>
+					<ul class="nav navbar-nav">
+						<li><a href="/">Главная <span class="sr-only">(current)</span></a></li>
+						<li><a href="/about">Обо мне</a></li>
+						<li><a href="/training">Тренировки</a></li>
+						<li><a href="/gallery">Галерея</a></li>
+						<li><a href="/contact">Контакты</a></li>
+						<div class="clearfix"> </div>
+			  		</ul>
+                                </div>
+{% endblock %}
+{% block content %} 
+<div class="container">
+<h2> Реадактирование новости</h2>
+<br>
+<?php
+   print '<form method="POST" action="/edit/update">'
+     . '<p>Дата </p><input type="text"  name="date" placeholder="'.$data['date'].'"><br>'
+     . '<p>Заголовок </p><input type="text" name="title" size=30 placeholder="'.$data['title'].'"/>'
+     . '<br><p>Текст </p><textarea name="content" cols=50 rows=20 placeholder="'.$data['content'].'"></textarea>'
+     . '<input type="hidden" name="id" value='.$data['id'].'><br>'
+     . '<input type="submit" name="submit" value="Редактировать"></form>';
+?>
+</div>
+{% endblock  %}
