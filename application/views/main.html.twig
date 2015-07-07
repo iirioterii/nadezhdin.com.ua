@@ -7,10 +7,10 @@
 				 	<span class="menu"> </span>
 					<ul class="nav navbar-nav">
 						<li><a class="active" href="/">Главная <span class="sr-only">(current)</span></a></li>
-						<li><a href="/about">Обо мне</a></li>
-						<li><a href="/training">Тренировки</a></li>
-						<li><a href="/gallery">Галерея</a></li>
-						<li><a href="/contact">Контакты</a></li>
+						<li><a href="{{ url.generate('about') }}">Обо мне</a></li>
+						<li><a href="{{ url.generate('training') }}">Тренировки</a></li>
+						<li><a href="{{ url.generate('gallery') }}">Галерея</a></li>
+						<li><a href="{{ url.generate('contact') }}">Контакты</a></li>
 						<div class="clearfix"> </div>
 			  		</ul>
                                 </div>
@@ -44,17 +44,19 @@
 				<ul class="service_grid">
    	   			   <i class="s1"> </i>
    	   			   <li class="desc">
-                                       <h3>{{article.title}}</h3>
-                                            <p>{{article.data}}</p>
+                                       <h3><a href="{{url.generate('news', {slug:article.slug})}}">{{article.title}}</a></h3>
+                                            <p>{{article.date}}</p>
    	   				<p>{{article.content}}</p>
+                                        {% if ses.isauth == true %}
                                               <table>
                                                 <tr>
-                                                <td><a href="/main/del?id={{article.id}}">Удалить</a></td>
+                                                <td><a href="{{url.generate('adminDel', {id:article.id})}}">Удалить</a></td>
                                                 </tr>
                                                 <tr>
-                                                <td><a href="/edit?id={{article.id}}">Редактировать</a></td>  
+                                                <td><a href="{{url.generate('edit', {id:article.id})}}">Редактировать</a></td>  
                                                 </tr>
                                             </table>
+                                                {% endif %}
                                             </li>
    	   			   <div class="clearfix"> </div>
    	   			</ul>

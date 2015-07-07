@@ -20,15 +20,44 @@
 	<div class="container">
 		<h5>СТРАНИЦА АДМИНИСТРАТОРА</h5>
 
+{% if  ses.isauth == true %}
+<p align="right">Добро пожаловать {{ses.login}}
+<a href="/admin/logout">Выйти</a>
+                </br>
+                
+
+{% else %}
+
+        <form id="signin" class="navbar-form navbar-right" role="form" method="POST" action="/admin/login">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="email" type="text" class="form-control" name="login" value="" placeholder="Логин">                                        
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="password" type="text" class="form-control" name="pass" value="" placeholder="Пароль">                                        
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Вход</button>
+                   </form>
+{% endif %}     
+    
+  
+               
+                
 <br>
+{% if ses.isauth == true %}
 <p>Добавление новости:</p><br>
-<form method="POST" action="/admin/admin">
+
+<form method="POST" action="{{ url.generate('adminAdd') }}">
     <input type="text" name="date" placeholder="Дата"/><br>
     <input type="text" name="title" placeholder="Заголовок" size="30"/><br>
     <textarea name="content" rows="10" cols="100"> </textarea><br>
     <input type="submit" value="Добавить"/><br>
     
 </form>
+    {% endif %}
 </div>
     </div>
 {% endblock  %}

@@ -6,7 +6,6 @@ session_start();
 // подключаем файлы ядра
 require_once 'core/controller.php';
 require_once 'core/model.php';
-//require_once 'core/view.php';
 require_once 'core/db.php';
 require_once 'vendor/Twig/Autoloader.php';
 Twig_Autoloader::register(true);
@@ -28,19 +27,6 @@ spl_autoload_register(function ($class) {
     }
     throw new \LogicException(sprintf('Class "%s" not found in "%s" and in "%s"', $class, $path, $pathMy));
 });
-/*
-Здесь обычно подключаются дополнительные модули, реализующие различный функционал:
-	> аутентификацию
-	> кеширование
-	> работу с формами
-	> абстракции для доступа к данным
-	> ORM
-	> Unit тестирование
-	> Benchmarking
-	> Работу с изображениями
-	> Backup
-	> и др.
-*/
 
-require_once 'core/route1.php';
-//Route::start(); // запускаем маршрутизатор
+require_once 'core/router.php';
+

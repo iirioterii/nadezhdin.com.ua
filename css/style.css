@@ -65,7 +65,7 @@ color:#1f201d;
 font-size:18px;
 font-weight:600;
   border-right: 1px solid #dedddd;
-  font-family: 'Ubuntu', sans-serif; !important;
+  font-family: 'Ubuntu', sans-serif; 
 }
 .nav > li > a {
   padding: 7px 15px !important;
@@ -2242,4 +2242,3 @@ p.gal-txt {
 	  font-size: 3.3em;
 	}
 }
-/*--/responsive--*/

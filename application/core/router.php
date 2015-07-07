@@ -7,14 +7,24 @@ try {
     $router = new Router(RouterTrait::GET_HTTP_HOST());
 
     //Admin
-    $router->add('main', '/', 'controller_main:action_index' , 'GET|POST');
+    $router->add('index', '/', 'controller_main:action_index', 'GET|POST');
+    $router->add('admin', '/admin', 'controller_admin:action_index', 'GET|POST');
+    $router->add('adminLogin', '/admin/login', 'controller_admin:action_login', 'GET|POST');
+    $router->add('adminLogout', '/admin/logout', 'controller_admin:action_logout', 'GET|POST');
+    $router->add('adminAdd', '/admin/add', 'controller_admin:action_add', 'POST');
+    $router->add('adminDel', '/admin/del/(id:num)', 'controller_admin:action_del', 'GET');
+    $router->add('edit', '/edit/(id:num)', 'controller_edit:action_index', 'GET|POST');
+    $router->add('update', '/edit/update', 'controller_edit:action_update', 'GET|POST');
+    $router->add('news', '/news/(slug:str)', 'controller_main:action_news', 'GET|POST');
     $router->add('about', '/about', 'controller_about:action_index');
     $router->add('notFound', '/404', 'controller_404:action_index');
     $router->add('contact', '/contact', 'controller_contact:action_index');
     $router->add('training', '/training', 'controller_training:action_index');
     $router->add('gallery', '/gallery', 'controller_gallery:action_index');
-    $router->add('edit', '/edit/update', 'controller_edit:action_update', 'GET|POST');
-    $router->add('edit', '/edit', 'controller_edit:action_index', 'GET|POST');
+    
+//    $router->add('edit', '/edit/update', 'controller_edit:action_update', 'GET|POST');
+//    $router->add('edit', '/edit', 'controller_edit:action_index', 'GET|POST');
+//    $router->add('main', '/main/(slug:str)','controller_main:action_news', 'GET|POST');
    
 
     //Main

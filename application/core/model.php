@@ -25,15 +25,15 @@ class Model
             
         }
         
-        public function checker()
-                {
-            if($_SESSION['isauth']==FALSE)
-            {
-                header('location: /');
-                
-            }
-            
-                }
+//        public function checker()
+//                {
+//            if($_SESSION['isauth']==FALSE)
+//            {
+//                header('location: /');
+//                
+//            }
+//            
+//                }
                 
                 
                 

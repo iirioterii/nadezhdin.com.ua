@@ -1,0 +1,22 @@
+{# empty Twig template #}
+{% extends 'base_template.html.twig' %}
+{% block title %} Персональный тренер Евгений Надеждин - Обо мне{% endblock %}
+{%block top_menu %}
+			
+                                <div class="top-menu">
+				 	<span class="menu"> </span>
+					<ul class="nav navbar-nav">
+						<li><a href="/">Главная <span class="sr-only">(current)</span></a></li>
+						<li><a class="active" href="/about">Обо мне</a></li>
+						<li><a href="/training">Тренировки</a></li>
+						<li><a href="/gallery">Галерея</a></li>
+						<li><a href="/contact">Контакты</a></li>
+						<div class="clearfix"> </div>
+			  		</ul>
+                                </div>
+{% endblock %}
+{% block content %}
+{{news.title}}
+{{news.date}}
+{{news.content}}
+{% endblock %}

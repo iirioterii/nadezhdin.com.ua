@@ -4,15 +4,15 @@ use Routing\UrlGenerator;
 class Controller {
 	protected $view;
         protected $router;
-	//public $model;
+        protected $isauth=NULL;
+        //public $model;
 	//public $view;
 	
 	function __construct()
 	{
                 global $router;
                 $this->router = $router;
-		//$this->view = new View();
-                $loader = new Twig_Loader_Filesystem('application/views/');
+		$loader = new Twig_Loader_Filesystem('application/views/');
                 $this->view = new Twig_Environment($loader, array(
 		    'cache'       => 'twig_cache',
 		    'auto_reload' => true,
@@ -31,6 +31,8 @@ class Controller {
 		// todo	
           
 	}
+        
+
         
         public function loadModel($model) {
 	$file  = 'application/models/model_' . $model . '.php';
@@ -74,4 +76,13 @@ class Controller {
 		return $_SESSION;
 	}
         
+        public function checker() {
+            if (!isset($_SESSION['isauth']))
+            {
+                header('location: /');
+                                
+            }
+            
+        }
+      
 }
