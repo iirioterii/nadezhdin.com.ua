@@ -7,6 +7,7 @@ session_start();
 require_once 'core/controller.php';
 require_once 'core/model.php';
 require_once 'core/db.php';
+require_once 'vendor/simpledom/simple_html_dom.php';
 require_once 'vendor/Twig/Autoloader.php';
 Twig_Autoloader::register(true);
 

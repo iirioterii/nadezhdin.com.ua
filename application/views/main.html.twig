@@ -16,6 +16,8 @@
                                 </div>
 {% endblock %}
 {% block content %} 
+
+
 <div class="find-dog">
 	<div class="container relative">
 		<h4>Новости</h4>
@@ -46,8 +48,7 @@
    	   			   <li class="desc">
                                        <h3><a href="{{url.generate('news', {slug:article.slug})}}">{{article.title}}</a></h3>
                                             <p>{{article.date}}</p>
-   	   				<p>{{article.content}}</p>
-                                        {% if ses.isauth == true %}
+                                                {% if ses.isauth == true %}
                                               <table>
                                                 <tr>
                                                 <td><a href="{{url.generate('adminDel', {id:article.id})}}">Удалить</a></td>
@@ -343,7 +344,11 @@
 					<input type="submit" value="ОТПРАВИТЬ">
 				</div>
 			</form>
+                    
 		</div>
+                <br>
+        <p>Сейчас в Харькове: {{weathervalue|raw}}</p>
 	</div>
+        
 </div>
 {% endblock  %}

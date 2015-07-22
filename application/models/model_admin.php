@@ -43,13 +43,13 @@ class Model_Admin extends Model
     }
       
     public function login(){
-       $login=$_POST['login'];
-       $pass=$_POST['pass'];
-       $con =  $this->connectDB();
-       $sel = $con->query("SELECT * FROM auth WHERE login='$login'");
-       $data =  $sel->num_rows;
-       if ($data>0) { 
-       $arr=$sel->fetch_assoc();
+        $login=$_POST['login'];
+        $pass=$_POST['pass'];
+        $con =  $this->connectDB();
+        $sel = $con->query("SELECT * FROM auth WHERE login='$login'");
+        $data =  $sel->num_rows;
+        if ($data>0) { 
+        $arr=$sel->fetch_assoc();
 	
 
 		if ($arr['pass'] == md5($pass)) {

@@ -1,6 +1,16 @@
 {# empty Twig template #}
 {% extends 'base_template.html.twig' %}
 {% block title %}Персональный тренер Евгений Надеждин - Редактирование новости{% endblock  %}
+{% block js %}
+    {{parent()}}
+    <script type="text/javascript" src="/vendor/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: "#mytextarea"
+        });
+    </script>
+
+    {% endblock %}
 {%block top_menu %}
 			
                                 <div class="top-menu">
@@ -23,7 +33,7 @@
             <form method="POST" action="/edit/update">
                  <p>Дата </p><input type="text"  name="date" placeholder="{{data.date}}"><br>
                  <p>Заголовок </p><input type="text" name="title" size=30 placeholder="{{data.title}}"/>
-                 <br><p>Текст </p><textarea name="content" cols=50 rows=20 placeholder="{{data.content}}"></textarea>
+                 <br><p>Текст </p><textarea  id="mytextarea" name="content" cols=50 rows=20 placeholder="{{data.content}}"></textarea>
                  <input type="hidden" name="id" value={{data.id}}><br>
                  <input type="submit" name="submit" value="Редактировать">
             </form>

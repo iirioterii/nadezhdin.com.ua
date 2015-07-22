@@ -84,11 +84,22 @@ class Model
             "@"=>"",             "!"=>"",
             ";"=>"",             "№"=>"",
             "^"=>"",             ":"=>"",
-            "~"=>"",             "\\"=>""
+            "~"=>"",             "\\"=>"",
+            "1"=>"",             "6"=>"",
+            "2"=>"",             "7"=>"",
+            "3"=>"",             "8"=>"",
+            "4"=>"",             "9"=>"",
+            "5"=>"",             "0"=>"",
         );
 	return strtr($rus, $tr);
 			
 		}
+                
+        public function datafiltr($data) {
+            $datafiltr = mysql_escape_string($data);
+            return $datafiltr;
+                    
+        }
 }
         
             

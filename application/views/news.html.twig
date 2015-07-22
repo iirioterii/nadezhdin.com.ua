@@ -7,7 +7,7 @@
 				 	<span class="menu"> </span>
 					<ul class="nav navbar-nav">
 						<li><a href="/">Главная <span class="sr-only">(current)</span></a></li>
-						<li><a class="active" href="/about">Обо мне</a></li>
+						<li><a href="/about">Обо мне</a></li>
 						<li><a href="/training">Тренировки</a></li>
 						<li><a href="/gallery">Галерея</a></li>
 						<li><a href="/contact">Контакты</a></li>
@@ -16,7 +16,10 @@
                                 </div>
 {% endblock %}
 {% block content %}
-{{news.title}}
-{{news.date}}
-{{news.content}}
+ Новость:<br>
+{{news.title}}<br>
+Дата:<br>
+{{news.date}}<br>
+Полный текст новости:<br>
+{{news.content}}<br>
 {% endblock %}

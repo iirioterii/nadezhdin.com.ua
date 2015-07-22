@@ -25,8 +25,8 @@ class Controller_Admin extends Controller
         
         public function action_add() {
             $this->loadModel('admin')->insert();
-            $ses=$this->getSession();
-            echo $this->view->render ('admin.html.twig', array('ses' => $ses));
+            //$ses=$this->getSession();
+            //echo $this->view->render ('admin.html.twig', array('ses' => $ses));
             $this->action_index();
         }
         
